@@ -1,0 +1,89 @@
+---
+title: "Coding with Python Extra Credit"
+author: "Ginue Han"
+date: "February 12, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Part 3 Conditionals
+### Task 10
+```{r}
+rand_numb <- sample(0:100,1)
+print(rand_numb)
+if (rand_numb <= 25){
+    print("1st Quartile")
+} else if (rand_numb > 25 & rand_numb <= 50){
+    print("2nd Quartile")
+}else if (rand_numb > 50 & rand_numb <= 75){
+    print("3rd Quartile")
+}else{
+    print("4th Quartile")
+}
+```
+
+## Part 4 Loops
+### task 11
+```{r}
+cities_list = list("Buffalo", "Seattle", "Seoul", "Tokyo", "Paris", "Rome")
+for (city in cities_list){
+  cat("Warning, residents of ", city, ", temperatures will reach sub-zero temperatures today, please stay indoors if possible \n")
+  }
+```
+### task 12
+```{r}
+results_list = list()
+states_list = list("Washington", "California", "Nevada", "Idaho", "Montana", "Utah", "Colorado", "New Mexico")
+i = 1
+for (state in states_list){
+    file_path <- paste("U://Users/Zhang/Geog_458/", state, ".shp")
+    results_list[i] <- file_path
+    i <- i + 1
+    cat(file_path, "\n")
+}
+print(results_list)
+```
+### task 13
+```{r}
+counter = 10
+while (counter >= 0){
+    cat("T-minus ", as.character(counter), "\n")
+    counter <- counter - 1
+}
+```
+
+## Part 5 Functions
+### task 14
+```{r}
+countdown <- function(numb){
+  counter <- numb
+    while (counter >= 0){
+        cat("T-minus ", as.character(counter), "\n")
+        counter <- counter - 1
+    }
+}
+countdown(20)
+```
+
+### task 15
+```{r}
+what_quartile <- function(numb){
+    print(numb)
+    if (numb >= 0 & numb <= 25){
+        print("1st Quartile")
+    }else if (numb > 25 & numb <= 50){
+        print("2nd Quartile")
+    }else if (numb > 50 & numb <= 75){
+        print("3rd Quartile")
+    }else if (numb > 75 & numb <= 100){
+        print("4th Quartile")
+    }else{
+        print("Error")
+    }
+}
+what_quartile(25)
+
+```
